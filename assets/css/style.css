@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+body *{
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/* HEADER - MENU/LOGO */
+header .hearder-top{
+    background-color: #4C5958;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation-name: headertop;
+    animation-duration: 0.5s;  
+    animation-fill-mode: forwards;
+}
+@keyframes headertop {
+    0%   {background-color: #FFFFFF;}
+    100% {background-color: #4C5958;}
+  }
+.logo-top{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+}
+.logo-top p{
+    font-size: 30px;
+    margin: 0;
+    font-family: 'Recursive', sans-serif;
+    color: white;
+}
+header .hearder-top nav{
+    margin-right: 5%;
+}
+header .hearder-top nav ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+header .hearder-top nav ul li{
+    list-style: none;
+    margin: 0px 20px;
+}
+header .hearder-top nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+/* OPÇÕES DE CATEGORIA */
+.categ-options{
+    width: 100%;
+}
+.div-categ-options div h4{
+    margin: 0 5% 20px;
+}
+
+.categ-options-div{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0px 5%;
+}
+.categ-options-div div{
+    display: flex;
+    align-items: center;
+
+}
+.categ-options-div div a{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width: 100%;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+.categ-options-div div a:hover{
+    background-color: white;
+    opacity: 0.4;
+}
+
+.categ-options-div div a p{
+    color: black;
+    text-align: center;
+    font-size: 10px;
+}
+.categ-options-div div a img{
+    height: 50px;
+}
+
+/* FOOTER - LOGO E MENU INFERIOR */
+
+footer .footer-up{
+    background-color: #4C5958;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+.logo-bottom{
+    height: 100%;
+   margin-left: 5%;
+}
+.logo-bottom p{
+    font-size: 30px;
+    margin: 0;
+    font-family: 'Recursive', sans-serif;
+    color: white;
+}
+.menu-footer ul{
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    height: 100%;
+}
+.menu-footer ul li{
+    margin: 0 30px;
+}
+.menu-footer ul li a{
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+.footer-down{
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 70px;
+    padding: 5px 0;
+    align-items: center;
+}
+.footer-down a{
+    color: black;
+    text-decoration: none;
+}
+.footer-down ul{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+.footer-down ul li{
+    margin: 0 10px;
+}
+.footer-down ul li a{
+    color: black;
+    text-decoration: none;
+    font-size: 10px;
+}
+.redes-sociais ul li a i{
+    font-size: 30px;
+    color: #4C5958;
+}
+.politica-privacidade a{
+    font-size: 14px;
+}
+.copyright p{
+    font-size: 14px;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 768px) {
+    header .hearder-top{
+        flex-direction: column;
+    }
+    .logo-top{
+        margin-left: 0%;
+    }
+    header .hearder-top nav{
+        margin-right: 0;
+        background-color: #4C5958;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .categ-options-div{
+        justify-content: center;
+    }
+    .menu-footer ul{
+        flex-direction: column;
+    }
+    .footer-down{
+        flex-direction: column;
+    }
+    .footer-down div{
+        padding: 5px 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    header .hearder-top nav{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    .div-categ-options div h4{
+        font-size: 20px;
+        text-align: center;
+    }
+    footer .support-contact span{
+        color: white;
+        margin-right: 10px;
+        font-size: 14px;
+    }   
+}
+
+
+
