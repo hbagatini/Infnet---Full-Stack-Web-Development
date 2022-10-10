@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/style_limpeza.css">
+    <link rel="stylesheet" href="./assets/libs/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         crossorigin="anonymous">
     </link>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="./assets/libs/slick/slick.css">
+    <link rel="stylesheet" href="./assets/libs/slick/slick-theme.css">
     <title>Expery - Serviços de qualidade e na hora que você precisa</title>
 </head>
 
@@ -101,20 +102,29 @@
                 </div>
             </div>
         </section>
-
+        <!-- Img Limpeza -->
         <section class="limpeza-info">
             <div class="opções-limpeza">
                 <div class="domestica">
-                    <img src="./assets/img/limpeza_pag/limpeza_domestica.jpeg" alt="">
+                    <img class="images-limp d-none" src="./assets/img/limpeza_pag/limpeza_domestica.jpeg" alt="">
+                    <!-- Placeholder Img Limpeza -->
+                    <p class="placeholder-glow img-placeholder">
+                        <span class="placeholder col-12"></span>
+                      </p>
                     <div>
                         <span>
                             <p>Limpeza Domestica</p>
                         </span>
-                        <button type="button" class="btn btn-secondary">SOLICITAR</button>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                            data-bs-target="#limpeza-domestica-model-export">SOLICITAR</button>
                     </div>
                 </div>
                 <div class="calha">
-                    <img src="./assets/img/limpeza_pag/limpeza_calha.jpeg" alt="">
+                    <img class="images-limp d-none" src="./assets/img/limpeza_pag/limpeza_calha.jpeg" alt="">
+                    <!-- Placeholder Img Limpeza -->
+                    <p class="placeholder-glow img-placeholder">
+                        <span class="placeholder col-12"></span>
+                      </p>
                     <div>
                         <span>
                             <p>Limpeza de Calha</p>
@@ -124,23 +134,22 @@
 
                 </div>
                 <div class="dedetização">
-                    <img src="./assets/img/limpeza_pag/dedetização.jpeg" alt="">
+                    <img class="images-limp d-none" src="./assets/img/limpeza_pag/dedetização.jpeg" alt="">
+                    <!-- Placeholder Img Limpeza -->
+                    <p class="placeholder-glow img-placeholder">
+                        <span class="placeholder col-12"></span>
+                      </p>
                     <div>
                         <span>
                             <p>Dedetização</p>
                         </span>
-                        <button type="button"  class="btn btn-secondary">SOLICITAR</button>
+                        <button type="button" class="btn btn-secondary">SOLICITAR</button>
                     </div>
 
                 </div>
             </div>
         </section>
-
-
-
     </article>
-
-
     <footer>
         <div class="footer-up">
             <div class="logo-bottom">
@@ -154,9 +163,6 @@
                 </ul>
             </nav>
         </div>
-
-
-
         <div class="footer-down">
             <div class="politica-privacidade">
                 <span><a href="./index.html">Política de privacidade</a></span>
@@ -168,21 +174,62 @@
             </div>
             <div class="redes-sociais">
                 <ul>
-                    <li><a href="./index.html"><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a href="./index.html"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#copyright"><i class="fa-brands fa-facebook" data-bs-toggle="popover"
+                                data-bs-title="Facebook"
+                                data-bs-content="Antes de acessar nossa página no face, sorria! :)"></i></a></li>
+                    <li><a href="#copyright"><i class="fa-brands fa-instagram" data-bs-toggle="popover"
+                                data-bs-title="Instagram"
+                                data-bs-content="Antes de acessar nossa página no insta, sorria! :)"></i></a></li>
                 </ul>
             </div>
         </div>
-
-
-
     </footer>
-
-
-    <script src="./assets/libs/bootstrap/jquery-3.2.1.slim.min.js"></script>
-    <script src="./assets/libs/bootstrap/popper.min.js"></script>
+    <!-- Modal de Limpeza Domestica-->
+    <div class="modal fade" id="limpeza-domestica-model-export" tabindex="-1" aria-labelledby="model-limpeza-domestica"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="model-limpeza-domestica">Simulação do Valor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Metro quadrados -->
+                    <div class="div-modal-limpeza total-metros-quadrados">
+                        <h5>Quantos m<sup>2</sup> tem o local de limpeza:</h5>
+                        <input type="text" class="form-control input-m2" aria-label="Amount (to the nearest reais)">
+                        <span class="input-group-text">m<sup>2</sup></span>
+                    </div>
+                    <!-- Valor por m2 -->
+                    <div class="div-modal-limpeza valor-metros-quadrados">
+                        <h5>Valor por m<sup>2</sup>:</h5>
+                        <span class="input-group-text">R$</span>
+                        <input type="text" class="form-control valor-p-m2" aria-label="Amount-valor-m2">
+                        <span class="input-group-text">.00</span>
+                    </div>
+                    <!-- Valor total -->
+                    <div class="div-modal-limpeza valor-total">
+                        <h5>Valor total:</h5>
+                        <span class="input-group-text">R$</span>
+                        <input type="text" class="form-control valor-total-input" aria-label="Amount-reais">
+                        <span class="input-group-text">.00</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary buttom-order" data-bs-dismiss="modal">Solicitar
+                        cotação</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="./assets/libs/bootstrap/bootstrap.min.js"></script>
+    <script src="./assets/libs/bootstrap/popper.min.js"></script>
 
+    <script src="./assets/scripts/simular-valor.js"></script>
+    <script src="./assets/scripts/popovers.js"></script>
+    <script src="./assets/scripts/placeholder_limpeza.js"></script>
 </body>
 
 </html>

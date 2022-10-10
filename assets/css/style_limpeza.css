@@ -25,10 +25,21 @@
     font-size: 20px;
     font-weight: bold;
 }
-.opções-limpeza div button{
+.div-modal-limpeza{
+    margin: 40px 0;
+}
+.div-modal-limpeza span{
+    font-size: 16px;
+}
+.modal-dialog button{
     background-color: #4C5958;
+}
+
+/* PlaceHolder img */
+.img-placeholder{
     width: 50%;
 }
+
 
 /* RESPONSIVIDADE */
 

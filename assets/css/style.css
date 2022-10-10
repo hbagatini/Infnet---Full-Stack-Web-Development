@@ -122,6 +122,7 @@ footer .footer-up{
     padding: 0;
     display: flex;
     height: 100%;
+    margin: 0;
 }
 .menu-footer ul li{
     margin: 0 30px;
@@ -188,6 +189,9 @@ footer .footer-up{
     }
     .categ-options-div{
         justify-content: center;
+    }
+    .categ-options-div div{
+        padding: 8px;
     }
     .menu-footer ul{
         flex-direction: column;
